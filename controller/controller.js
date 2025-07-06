@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 
 
 const login=(req,res)=>{
-
+console.log("testing")
    const {name,password} = req.body
    const loginobj ={name,password}
    const token =jwt.sign(name,"lovekal123@")
