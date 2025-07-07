@@ -1,8 +1,10 @@
 const express = require('express')
 const router = require('./router/router')
+const dbConnection = require('./db/db')
 const app = express()
 app.use(express.json())
 app.use('/api',router)
 app.listen(8000, () => {
     console.log("server started")
+    dbConnection()
 })

@@ -1,7 +1,7 @@
 
 const jwt = require('jsonwebtoken')
 
-
+const Registerdata = require('../model/authschema')
 const login=(req,res)=>{
 console.log("testing")
    const {name,password} = req.body
@@ -11,9 +11,12 @@ console.log("testing")
 res.send("hello login")    
 }
 
-const Register =(req,res)=>{
-    console.log("hello Register")
-    res.send("hello Register")
+const Register = async (req, res) => {
+    const Ruser = new Registerdata(req.body)
+    console.log(req.body)
+   const data= await Ruser.save()
+    res.send(data)
+    
 }
 
 module.exports ={login,Register}
