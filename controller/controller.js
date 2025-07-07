@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken')
 
 const Registerdata = require('../model/authschema')
 const login=(req,res)=>{
-console.log("testing")
+    console.log("testing")
+    console.log("first")
    const {name,password} = req.body
    const loginobj ={name,password}
    const token =jwt.sign(name,"lovekal123@")
